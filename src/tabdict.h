@@ -8,6 +8,7 @@
 #ifndef TABDICT_H_
 #define TABDICT_H_
 
-int deparse(char id);
+char* parse(char*);
+int deparse(char);
 
 #endif /* TABDICT_H_ */

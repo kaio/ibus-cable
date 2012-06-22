@@ -35,7 +35,8 @@ char tab_dict[TAB_DICT_SIZE] =
 int
 deparse(char id)
 {
-  for (int i = 0; i < TAB_DICT_SIZE; ++i)
+  int i;
+  for (i = 0; i < TAB_DICT_SIZE; ++i)
     {
       if (id == tab_dict[i])
         return i;
@@ -43,29 +44,24 @@ deparse(char id)
   return -1;
 }
 
-// Will move to another source file for unit test.
-int
-main(void)
+char*
+parse(char* input_str)
 {
-
-  printf("Testing deparse().\n");
-
-  char query_char;
-  while (1)
-    {
-      printf("\nPlease insert the character for query: ");
-      query_char = getchar();
-      if (query_char == '\n')
-        {
-          printf("Quitting...\n");
-          return 1;
-        }
-      else
-        printf("The index of the char is [%i].\n", deparse(query_char) + 1);
-      while (getchar() == 1)
-        ;
-    }
-
-  return 0;
-
+//  int i = 0;
+//  char token;
+//  char* output_str;
+//    printf("%s", input_str);
+//
+//  while ((token = input_str[i]) != '\0')
+//    {
+//      for (int j = 0; j < TAB_DICT_SIZE; ++j)
+//        {
+//          if (token == tab_dict[j]){
+//              output_str[i] = j;
+//          }
+//
+//        }
+//    }
+  return input_str;
 }
+
