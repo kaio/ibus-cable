@@ -2,6 +2,7 @@
 
 #include <ibus.h>
 #include "engine.h"
+#include "stdio.h"
 
 static IBusBus *bus = NULL;
 static IBusFactory *factory = NULL;
@@ -29,7 +30,7 @@ static void
 init (void)
 {
     ibus_init ();
-
+/*
     bus = ibus_bus_new ();
     g_object_ref_sink (bus);
     g_signal_connect (bus, "disconnected", G_CALLBACK (ibus_disconnected_cb), NULL);
@@ -63,6 +64,7 @@ init (void)
                                                          "us"));
         ibus_bus_register_component (bus, component);
     }
+*/
 }
 
 int main(int argc, char **argv)
@@ -80,7 +82,25 @@ int main(int argc, char **argv)
       return (-1);
     }
 
+  int count;
+
+  printf ("This program was called with \"%s\".\n",argv[0]);
+
+  if (argc > 1)
+    {
+      for (count = 1; count < argc; count++)
+	{
+	  printf("argv[%d] = %s\n", count, argv[count]);
+	}
+    }
+  else
+    {
+      printf("The command had no other arguments.\n");
+    }
+
+  return 0;
+
     /* Go */
     init ();
-    ibus_main ();
+//    ibus_main ();
 }

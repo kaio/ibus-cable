@@ -1,6 +1,6 @@
 /* vim:set et sts=4: */
 
-#include <enchant.h>
+//#include <enchant.h>
 #include "engine.h"
 
 typedef struct _IBusEnchantEngine IBusEnchantEngine;
